@@ -45,7 +45,7 @@ public class QuantityMeasurementTest {
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 3.2);
         Assert.assertEquals(inch1, inch2, 0.0);
     }
-
+    //INCH
     @Test
     public void given0InchAnd0Inch_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
@@ -106,6 +106,13 @@ public class QuantityMeasurementTest {
     public void given12InchAnd1Feet_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 12.0);
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
+        Assert.assertEquals(inch1, inch2, 0.0);
+    }
+    //YARD
+    @Test
+    public void given3FeetAnd1Yard_WhenEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 3.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.YARD, 1.0);
         Assert.assertEquals(inch1, inch2, 0.0);
     }
 }
