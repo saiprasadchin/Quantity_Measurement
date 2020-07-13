@@ -28,13 +28,6 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void givenValueCheck_IfEqual_ShouldReturnTrue() {
-        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 2.2);
-        inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 2.2);
-        Assert.assertEquals(inch1, inch2, 0.0);
-    }
-
-    @Test
     public void given0InchAnd0Inch_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
         inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
@@ -58,6 +51,13 @@ public class QuantityMeasurementTest {
         QuantityMeasurement quantity1 = new QuantityMeasurement();
         QuantityMeasurement quantity2 = new QuantityMeasurement();
         Assert.assertEquals(quantity1, quantity2);
+    }
+
+    @Test
+    public void givenValueCheck_IfEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 3.2);
+        inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 3.2);
+        Assert.assertEquals(inch1, inch2, 0.0);
     }
 
     @Test
