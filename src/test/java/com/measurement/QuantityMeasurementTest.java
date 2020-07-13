@@ -54,6 +54,13 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenType_IfEqual_ShouldReturnTrue() {
+        QuantityMeasurement quantity1 = new QuantityMeasurement();
+        QuantityMeasurement quantity2 = new QuantityMeasurement();
+        Assert.assertEquals(quantity1, quantity2);
+    }
+
+    @Test
     public void givenValueCheckForInch_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 4.2);
         inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 4.2);
