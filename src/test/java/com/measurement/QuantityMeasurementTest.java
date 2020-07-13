@@ -1,5 +1,7 @@
 package com.measurement;
 
+import com.measurement.services.QuantityMeasurement;
+import com.measurement.utility.UnitType;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,14 +19,23 @@ public class QuantityMeasurementTest {
     public void given0FeetAnd0Feet_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 0.0);
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 0.0);
-        Assert.assertEquals(inch1,inch2,0.0);
+        Assert.assertEquals(inch1, inch2,0.0);
     }
 
     @Test
     public void given0FeetAnd1Feet_IfNotEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 0.0);
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
-        Assert.assertNotEquals(inch1,inch2,0.0);
+        Assert.assertNotEquals(inch1, inch2,0.0);
+    }
+
+    @Test
+    public void givenNullValueForFeet_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnUnit(UnitType.FEET, null);
+        } catch (NullPointerException e) {
+            Assert.assertEquals(null, e.getMessage());
+        }
     }
 
     @Test

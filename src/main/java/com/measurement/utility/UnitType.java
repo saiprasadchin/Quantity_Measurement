@@ -1,4 +1,4 @@
-package com.measurement;
+package com.measurement.utility;
 
 public enum  UnitType {
     FEET(1 * 12.0), INCH(1.0);
