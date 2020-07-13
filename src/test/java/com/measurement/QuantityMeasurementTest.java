@@ -49,6 +49,11 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void givenReferenceForFeet_IfEqual_ShouldReturnTrue() {
+        Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
+    }
+
+    @Test
     public void givenValueCheckForInch_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 4.2);
         inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 4.2);
