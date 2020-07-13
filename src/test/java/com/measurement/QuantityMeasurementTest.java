@@ -143,4 +143,11 @@ public class QuantityMeasurementTest {
         inch2 = quantityMeasurement.returnUnit(UnitType.YARD, 1.0);
         Assert.assertEquals(inch1, inch2, 0.0);
     }
+
+    @Test
+    public void given1YardAnd3Feet_WhenEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.YARD, 1.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 3.0);
+        Assert.assertEquals(inch1, inch2, 0.0);
+    }
 }
