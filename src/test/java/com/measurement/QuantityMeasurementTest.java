@@ -28,20 +28,6 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    public void given0InchAnd0Inch_IfEqual_ShouldReturnTrue() {
-        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
-        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
-        Assert.assertEquals(inch1, inch2, 0.0);
-    }
-
-    @Test
-    public void given0InchAnd1Inch_IfNotEqual_ShouldReturnTrue() {
-        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
-        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 1.0);
-        Assert.assertNotEquals(inch1, inch2, 0.0);
-    }
-
-    @Test
     public void givenReferenceForFeet_IfEqual_ShouldReturnTrue() {
         Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
     }
@@ -58,6 +44,41 @@ public class QuantityMeasurementTest {
         inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 3.2);
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 3.2);
         Assert.assertEquals(inch1, inch2, 0.0);
+    }
+
+    @Test
+    public void given0InchAnd0Inch_IfEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
+        Assert.assertEquals(inch1, inch2, 0.0);
+    }
+
+    @Test
+    public void given0InchAnd1Inch_IfNotEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 0.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 1.0);
+        Assert.assertNotEquals(inch1, inch2, 0.0);
+    }
+
+    @Test
+    public void givenNullValueForInch_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnUnit(UnitType.INCH, null);
+        } catch (NullPointerException e) {
+            Assert.assertEquals(null, e.getMessage());
+        }
+    }
+
+    @Test
+    public void givenReferenceForInch_IfEqual_ShouldReturnTrue() {
+        Assert.assertTrue(quantityMeasurement.equals(quantityMeasurement));
+    }
+
+    @Test
+    public void givenTypeForInch_IfEqual_ShouldReturnTrue() {
+        QuantityMeasurement quantity1 = new QuantityMeasurement();
+        QuantityMeasurement quantity2 = new QuantityMeasurement();
+        Assert.assertEquals(quantity1, quantity2);
     }
 
     @Test
