@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class QuantityMeasurement {
 
-    public double returnUnit(UnitType type, double unit) {
+    public double returnUnit(UnitType type, Double unit) {
         return unit * type.conversionUnit;
     }
 

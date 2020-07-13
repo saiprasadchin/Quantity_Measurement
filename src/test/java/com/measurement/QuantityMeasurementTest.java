@@ -89,6 +89,20 @@ public class QuantityMeasurementTest {
     }
 
     @Test
+    public void given1FeetAnd1Inch_IfNotEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 1.0);
+        Assert.assertNotEquals(inch1, inch2, 0.0);
+    }
+
+    @Test
+    public void given1InchAnd1Feet_IfNotEqual_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 1.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
+        Assert.assertNotEquals(inch1, inch2, 0.0);
+    }
+
+    @Test
     public void given12InchAnd1Feet_IfEqual_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 12.0);
         inch2 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
