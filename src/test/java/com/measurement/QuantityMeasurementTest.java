@@ -175,4 +175,13 @@ public class QuantityMeasurementTest {
         inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 1.0);
         Assert.assertNotEquals(inch1, inch2, 0.0);
     }
+
+    @Test
+    public void givenNullValueForCentimeter_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnUnit(UnitType.CENTIMETER, null);
+        } catch (NullPointerException e) {
+            Assert.assertEquals(null, e.getMessage());
+        }
+    }
 }
