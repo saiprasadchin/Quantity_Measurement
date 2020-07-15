@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class QuantityMeasurementTest {
     private static QuantityMeasurement quantityMeasurement;
-    private double inch1, inch2;
+    private double inch1, inch2 ,inch3;
 
     @Before
     public void setUp() {
@@ -197,5 +197,13 @@ public class QuantityMeasurementTest {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 2.0);
         inch2 = quantityMeasurement.addition(inch1, inch1);
         Assert.assertEquals(4.0, inch2, 0.0);
+    }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenEqualTo14Inch_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
+        inch2 = quantityMeasurement.returnUnit(UnitType.INCH, 2.0);
+        inch3 = quantityMeasurement.addition(inch1, inch2);
+        Assert.assertEquals(14.0, inch3, 0.0);
     }
 }
