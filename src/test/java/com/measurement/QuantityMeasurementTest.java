@@ -191,4 +191,11 @@ public class QuantityMeasurementTest {
         inch2 = quantityMeasurement.returnUnit(UnitType.CENTIMETER, 5.0);
         Assert.assertEquals(inch1, inch2, 0.0);
     }
+
+    @Test
+    public void given2InchAnd2Inch_WhenEqualTo4Inch_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 2.0);
+        inch2 = quantityMeasurement.addition(inch1, inch1);
+        Assert.assertEquals(4.0, inch2, 0.0);
+    }
 }
