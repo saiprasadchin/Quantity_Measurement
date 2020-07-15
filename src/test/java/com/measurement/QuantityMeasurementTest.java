@@ -321,4 +321,12 @@ public class QuantityMeasurementTest {
         litre3 = quantityMeasurement.addition(litre1, litre2);
         Assert.assertEquals(7.57, litre3, 0.0);
     }
+
+    @Test
+    public void given1LitreAnd1000Millilitre_WhenEqualTo2Litre_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.LITRE, 1.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.MILLILITRE, 1000.0);
+        litre3 = quantityMeasurement.addition(litre1, litre2);
+        Assert.assertEquals(2.0, litre3, 0.0);
+    }
 }
