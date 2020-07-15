@@ -413,4 +413,11 @@ public class QuantityMeasurementTest {
         kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 1000.0);
         Assert.assertEquals(kilogram1, kilogram2, 0.0);
     }
+
+    @Test
+    public void given1TonneAnd1000Kilogram_WhenEqual_ShouldReturnTrue() {
+        kilogram1 = quantityMeasurement.returnUnit(UnitType.TONNE, 1.0);
+        kilogram2 = quantityMeasurement.returnUnit(UnitType.KILOGRAM, 1000.0);
+        Assert.assertEquals(kilogram1, kilogram2, 0.0);
+    }
 }
