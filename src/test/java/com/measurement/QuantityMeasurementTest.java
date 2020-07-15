@@ -282,4 +282,11 @@ public class QuantityMeasurementTest {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
+    //Millilitre
+    @Test
+    public void given0MillilitreAnd0Millilitre_WhenEqual_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.MILLILITRE, 0.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.MILLILITRE, 0.0);
+        Assert.assertEquals(litre1, litre2, 0.0);
+    }
 }
