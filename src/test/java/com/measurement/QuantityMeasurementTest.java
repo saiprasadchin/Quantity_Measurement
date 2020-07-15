@@ -397,4 +397,13 @@ public class QuantityMeasurementTest {
         kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 0.0);
         Assert.assertEquals(kilogram1, kilogram2, 0.0);
     }
+
+    @Test
+    public void givenNullValueForGram_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnUnit(UnitType.GRAM, null);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
+        }
+    }
 }
