@@ -206,4 +206,10 @@ public class QuantityMeasurementTest {
         inch3 = quantityMeasurement.addition(inch1, inch2);
         Assert.assertEquals(14.0, inch3, 0.0);
     }
+    @Test
+    public void given1FeetAnd1Feet_WhenEqualTo24Inch_ShouldReturnTrue() {
+        inch1 = quantityMeasurement.returnUnit(UnitType.FEET, 1.0);
+        inch2 = quantityMeasurement.addition(inch1, inch1);
+        Assert.assertEquals(24.0, inch2, 0.0);
+    }
 }
