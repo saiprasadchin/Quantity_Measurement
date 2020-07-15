@@ -450,4 +450,13 @@ public class QuantityMeasurementTest {
         fahrenheit2 = quantityMeasurement.returnTemperature(UnitType.CELSIUS, 15.0);
         Assert.assertNotEquals(fahrenheit1, fahrenheit2, 0.0);
     }
+
+    @Test
+    public void givenNullValueForFahrenheit_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnTemperature(UnitType.FAHRENHEIT, null);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
+        }
+    }
 }
