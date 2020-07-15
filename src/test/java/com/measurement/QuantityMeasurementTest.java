@@ -1,5 +1,6 @@
 package com.measurement;
 
+import com.measurement.exception.QuantityMeasurementException;
 import com.measurement.services.QuantityMeasurement;
 import com.measurement.utility.UnitType;
 import org.junit.Assert;
@@ -34,8 +35,8 @@ public class QuantityMeasurementTest {
     public void givenNullValueForFeet_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.FEET, null);
-        } catch (NullPointerException e) {
-            Assert.assertEquals(null, e.getMessage());
+        }catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
 
@@ -76,8 +77,8 @@ public class QuantityMeasurementTest {
     public void givenNullValueForInch_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.INCH, null);
-        } catch (NullPointerException e) {
-            Assert.assertEquals(null, e.getMessage());
+        }catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
 
@@ -181,8 +182,8 @@ public class QuantityMeasurementTest {
     public void givenNullValueForCentimeter_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.CENTIMETER, null);
-        } catch (NullPointerException e) {
-            Assert.assertEquals(null, e.getMessage());
+        }catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
 
@@ -241,5 +242,14 @@ public class QuantityMeasurementTest {
         litre1 = quantityMeasurement.returnUnit(UnitType.GALLON, 0.0);
         litre2 = quantityMeasurement.returnUnit(UnitType.LITRE, 1.0);
         Assert.assertNotEquals(litre1, litre2, 0.0);
+    }
+
+    @Test
+    public void givenNullValueForGallon_IfEqual_ShouldReturnFalse() {
+        try {
+            quantityMeasurement.returnUnit(UnitType.GALLON, null);
+        }catch (QuantityMeasurementException e) {
+            Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
+        }
     }
 }
