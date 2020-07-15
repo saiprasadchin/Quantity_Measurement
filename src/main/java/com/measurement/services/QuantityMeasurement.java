@@ -8,7 +8,7 @@ public class QuantityMeasurement  {
         return unit * type.conversionUnit;
     }
 
-    public double addition(double inch1, double inch12) {
-        return 0;
+    public double addition(double firstValue, double secondValue) {
+        return firstValue + secondValue;
     }
 }
