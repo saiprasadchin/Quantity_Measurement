@@ -36,7 +36,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForFeet_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.FEET, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -78,7 +78,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForInch_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.INCH, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -183,7 +183,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForCentimeter_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.CENTIMETER, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -249,7 +249,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForGallon_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.GALLON, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -279,7 +279,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForLitre_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.LITRE, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -295,7 +295,7 @@ public class QuantityMeasurementTest {
     public void givenNullValueForMillilitre_IfEqual_ShouldReturnFalse() {
         try {
             quantityMeasurement.returnUnit(UnitType.MILLILITRE, null);
-        }catch (QuantityMeasurementException e) {
+        } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
@@ -359,5 +359,12 @@ public class QuantityMeasurementTest {
         } catch (QuantityMeasurementException e) {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
+    }
+    //Tonne
+    @Test
+    public void given0TonneAnd0Tonne_WhenEqual_ShouldReturnTrue() {
+        kilogram1 = quantityMeasurement.returnUnit(UnitType.TONNE, 0.0);
+        kilogram2 = quantityMeasurement.returnUnit(UnitType.TONNE, 0.0);
+        Assert.assertEquals(kilogram1, kilogram2, 0.0);
     }
 }
