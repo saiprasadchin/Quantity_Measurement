@@ -390,4 +390,11 @@ public class QuantityMeasurementTest {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
+    //Gram
+    @Test
+    public void given0GramAnd0Gram_WhenEqual_ShouldReturnTrue() {
+        kilogram1 = quantityMeasurement.returnUnit(UnitType.GRAM, 0.0);
+        kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 0.0);
+        Assert.assertEquals(kilogram1, kilogram2, 0.0);
+    }
 }
