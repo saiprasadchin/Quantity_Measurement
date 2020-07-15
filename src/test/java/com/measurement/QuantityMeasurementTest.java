@@ -10,7 +10,7 @@ import org.junit.Test;
 public class QuantityMeasurementTest {
     private static QuantityMeasurement quantityMeasurement;
     private double inch1, inch2 ,inch3;
-    private double litre1, litre2;
+    private double litre1, litre2, litre3;
 
     @Before
     public void setUp() {
@@ -311,5 +311,14 @@ public class QuantityMeasurementTest {
         litre1 = quantityMeasurement.returnUnit(UnitType.LITRE, 1.0);
         litre2 = quantityMeasurement.returnUnit(UnitType.MILLILITRE, 1000.0);
         Assert.assertEquals(litre1, litre2, 0.0);
+    }
+    //Add Volumes In Litres
+
+    @Test
+    public void given1GallonAnd3Point78Litre_WhenEqualTo7Point57Litre_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.GALLON, 1.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.LITRE, 3.785);
+        litre3 = quantityMeasurement.addition(litre1, litre2);
+        Assert.assertEquals(7.57, litre3, 0.0);
     }
 }
