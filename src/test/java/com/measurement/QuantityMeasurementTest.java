@@ -235,4 +235,11 @@ public class QuantityMeasurementTest {
         litre2 = quantityMeasurement.returnUnit(UnitType.LITRE, 0.0);
         Assert.assertEquals(litre1, litre2, 0.0);
     }
+
+    @Test
+    public void given0GallonAnd1Litre_WhenNotEqual_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.GALLON, 0.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.LITRE, 1.0);
+        Assert.assertNotEquals(litre1, litre2, 0.0);
+    }
 }
