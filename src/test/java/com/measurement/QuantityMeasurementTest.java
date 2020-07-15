@@ -12,6 +12,7 @@ public class QuantityMeasurementTest {
     private double inch1, inch2 ,inch3;
     private double litre1, litre2, litre3;
     private double kilogram1, kilogram2,kilogram3;
+    private double fahrenheit1,fahrenheit2;
 
     @Before
     public void setUp() {
@@ -427,5 +428,12 @@ public class QuantityMeasurementTest {
         kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 1000.0);
         kilogram3 = quantityMeasurement.addition(kilogram1, kilogram2);
         Assert.assertEquals(1001.0, kilogram3, 0.0);
+    }
+    //Temperature and Fahrenheit
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_WhenEqual_ShouldReturnTrue() {
+        fahrenheit1 = quantityMeasurement.returnTemperature(UnitType.FAHRENHEIT, 0.0);
+        fahrenheit2 = quantityMeasurement.returnTemperature(UnitType.FAHRENHEIT, 0.0);
+        Assert.assertEquals(fahrenheit1, fahrenheit2, 0.0);
     }
 }
