@@ -11,7 +11,7 @@ public class QuantityMeasurementTest {
     private static QuantityMeasurement quantityMeasurement;
     private double inch1, inch2 ,inch3;
     private double litre1, litre2, litre3;
-    private double kilogram1, kilogram2;
+    private double kilogram1, kilogram2,kilogram3;
 
     @Before
     public void setUp() {
@@ -419,5 +419,13 @@ public class QuantityMeasurementTest {
         kilogram1 = quantityMeasurement.returnUnit(UnitType.TONNE, 1.0);
         kilogram2 = quantityMeasurement.returnUnit(UnitType.KILOGRAM, 1000.0);
         Assert.assertEquals(kilogram1, kilogram2, 0.0);
+    }
+
+    @Test
+    public void given1TonneAnd1000Gram_WhenEqualTo1001Kilogram_ShouldReturnTrue() {
+        kilogram1 = quantityMeasurement.returnUnit(UnitType.TONNE, 1.0);
+        kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 1000.0);
+        kilogram3 = quantityMeasurement.addition(kilogram1, kilogram2);
+        Assert.assertEquals(1001.0, kilogram3, 0.0);
     }
 }
