@@ -9,6 +9,7 @@ import org.junit.Test;
 public class QuantityMeasurementTest {
     private static QuantityMeasurement quantityMeasurement;
     private double inch1, inch2 ,inch3;
+    private double litre1, litre2;
 
     @Before
     public void setUp() {
@@ -219,5 +220,12 @@ public class QuantityMeasurementTest {
         inch2 = quantityMeasurement.returnUnit(UnitType.CENTIMETER, 2.5);
         inch3 = quantityMeasurement.addition(inch1, inch2);
         Assert.assertEquals(3.0, inch3, 0.0);
+    }
+    //Gallon
+    @Test
+    public void given0GallonAnd0Gallon_WhenEqual_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.GALLON, 0.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.GALLON, 0.0);
+        Assert.assertEquals(litre1, litre2, 0.0);
     }
 }
