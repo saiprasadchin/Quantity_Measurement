@@ -298,4 +298,11 @@ public class QuantityMeasurementTest {
             Assert.assertEquals(e.type, QuantityMeasurementException.ExceptionType.NULL_VALUE);
         }
     }
+
+    @Test
+    public void given1GallonAnd3Point78Litre_WhenEqual_ShouldReturnTrue() {
+        litre1 = quantityMeasurement.returnUnit(UnitType.GALLON, 1.0);
+        litre2 = quantityMeasurement.returnUnit(UnitType.LITRE, 3.785);
+        Assert.assertEquals(litre1, litre2, 0.0);
+    }
 }
