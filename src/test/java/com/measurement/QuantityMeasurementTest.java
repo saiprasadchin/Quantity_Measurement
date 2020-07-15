@@ -10,7 +10,7 @@ import org.junit.Test;
 public class QuantityMeasurementTest {
     private static QuantityMeasurement quantityMeasurement;
     private double inch1, inch2 ,inch3;
-    private double litre1, litre2,
+    private double litre1, litre2, litre3;
     private double kilogram1, kilogram2;
 
     @Before
@@ -335,6 +335,13 @@ public class QuantityMeasurementTest {
     public void given0KilogramAnd0Kilogram_WhenEqual_ShouldReturnTrue() {
         kilogram1 = quantityMeasurement.returnUnit(UnitType.KILOGRAM, 0.0);
         kilogram2 = quantityMeasurement.returnUnit(UnitType.KILOGRAM, 0.0);
+        Assert.assertEquals(kilogram1, kilogram2, 0.0);
+    }
+
+    @Test
+    public void given0KilogramAnd0Gram_WhenEqual_ShouldReturnTrue() {
+        kilogram1 = quantityMeasurement.returnUnit(UnitType.KILOGRAM, 0.0);
+        kilogram2 = quantityMeasurement.returnUnit(UnitType.GRAM, 0.0);
         Assert.assertEquals(kilogram1, kilogram2, 0.0);
     }
 }
