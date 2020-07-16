@@ -1,14 +1,15 @@
 package com.measurement;
 
 import com.measurement.exception.QuantityMeasurementException;
+import com.measurement.services.IQuantityMeasurement;
 import com.measurement.services.QuantityMeasurement;
-import com.measurement.utility.UnitType;
+import com.measurement.enums.UnitType;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class QuantityMeasurementTest {
-    private static QuantityMeasurement quantityMeasurement;
+    private static IQuantityMeasurement quantityMeasurement;
     private double inch1, inch2 ,inch3;
     private double litre1, litre2, litre3;
     private double kilogram1, kilogram2,kilogram3;
@@ -200,7 +201,7 @@ public class QuantityMeasurementTest {
     public void given2InchAnd2Inch_WhenEqualTo4Inch_ShouldReturnTrue() {
         inch1 = quantityMeasurement.returnUnit(UnitType.INCH, 2.0);
         inch2 = quantityMeasurement.addition(inch1, inch1);
-        Assert.assertEquals(4.0, inch2, 0.0);
+        Assert.assertEquals(4.00, inch2, 0.0);
     }
 
     @Test
